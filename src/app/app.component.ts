@@ -17,22 +17,17 @@ export class AppComponent {
   language:any
 
   constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en','es']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 
   ngOnInit() {
-  this.setLanguage()
   this.setTranslations()
   }
 
   getLanguage(language:any){
-    console.log(language)
-    this.setLanguage()
-  }
-
-  setLanguage(){
-    this.translate.addLangs(['en','es']);
-    this.translate.setDefaultLang('en');
-    this.translate.use(this.language);
+    this.translate.use(language);
   }
 
   setTranslations(){

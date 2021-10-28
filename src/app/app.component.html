@@ -1,5 +1,6 @@
 <app-header  (sendLanguage)="getLanguage($event)"></app-header>
-<h1 class="title">hOLA</h1>
-<p >{{ 'welcomeMessage' | translate: user }}</p>
+<p class="title">{{ 'title' | translate: user }}</p>
 
+<h2 class="subtitle">{{ 'description' | translate: user }}</h2>
+<p class="">{{ 'welcomeMessage' | translate: user }}</p>
 <router-outlet></router-outlet>
