@@ -1,3 +1,4 @@
+import { HeaderComponent } from './components/header/header.component';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
