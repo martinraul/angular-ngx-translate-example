@@ -10,20 +10,33 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class AppComponent {
   title = 'angular-ngx-translate-example';
-
   user!: { firstName: string; lastName: string; };
   welcome!: string;
   usernameLabel!: string;
   passwordLabel!: string;
+  language:any
 
   constructor(private translate: TranslateService) {
-    translate.addLangs(['en','es']);
-    translate.setDefaultLang('en');
-    translate.use('en');
   }
 
   ngOnInit() {
-    // hardcoded example
+  this.setLanguage()
+  this.setTranslations()
+  }
+
+  getLanguage(language:any){
+    console.log(language)
+    this.setLanguage()
+  }
+
+  setLanguage(){
+    this.translate.addLangs(['en','es']);
+    this.translate.setDefaultLang('en');
+    this.translate.use(this.language);
+  }
+
+  setTranslations(){
+      // hardcoded example
     this.user = { firstName: 'Sammy', lastName: 'Shark' };
 
     // synchronous. Also interpolate the 'firstName' parameter with a value.

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header  (sendLanguage)="getLanguage($event)"></app-header>
 <h1 class="title">hOLA</h1>
 <p >{{ 'welcomeMessage' | translate: user }}</p>
 
