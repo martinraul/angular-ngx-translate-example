@@ -6,10 +6,5 @@
     "spanish":"Spanish",
     "portuguese":"Portuguese",
     "header":"NGX-TRANSLATE Test"
-  },
-  "welcomeMessage": "Thanks for joining us, {{ firstName }}! It's great to have you!",
-  "login": {
-    "username": "Enter your user name",
-    "password": "Password here"
   }
 }

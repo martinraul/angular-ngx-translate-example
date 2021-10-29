@@ -6,11 +6,5 @@
     "spanish":"Español",
     "portuguese":"Portugues",
     "header":"NGX-TRANSLATE Prueba"
-  },
-  "welcomeMessage": "Hola sammy {{ firstName }}! que plaacer tenerte aquí",
-  "login": {
-    "username": "Enter your user name",
-    "password": "Password here"
   }
-  
 }
