@@ -1,8 +1,7 @@
 <nav class="navbar is-transparent">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"
-                width="112" height="28">
+                <h1 class="title is-size-2 has-text-primary">{{translates$.header}}</h1>
         </a>
         <div class="navbar-burger" data-target="navbarExampleTransparentExample">
             <span></span>
@@ -15,26 +14,26 @@
         <div class="navbar-item">
             <div class="field is-grouped">
                 <p class="control">
-                    <a class="button" (click)="setLanguage($event)" id="en">
+                    <a class="button" (click)="setLanguage($event)" id="en" [ngClass]="{'is-success': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
                         <img src="/assets/flags/en-us.png" alt="">
                         <span>
-                            English
+                            {{ translates$.english }}
                         </span>
                     </a>
                 </p>
                 <p class="control" >
-                    <a class="button" (click)="setLanguage($event)" id="es" >
+                    <a class="button" (click)="setLanguage($event)" id="es" [ngClass]="{'is-success': selectedItem === 'item1'}" (click)="selectedItem = 'item1'" >
                         <img src="/assets/flags/es-ar.png">
                         <span>
-                            Español
+                            {{ translates$.spanish }}
                         </span>
                     </a>
                 </p>
                 <p class="control">
-                    <a class="button" (click)="setLanguage($event)" id="pr">
+                    <a class="button" (click)="setLanguage($event)" id="br" [ngClass]="{'is-success': selectedItem === 'item3'}" (click)="selectedItem = 'item3'">
                         <img src="/assets/flags/pt-br.png" alt="">
                         <span >
-                            Portuguese
+                            {{ translates$.portuguese }}
                         </span>
                     </a>
                 </p>
@@ -43,4 +42,3 @@
     </div>
 
 </nav>
-<img src="/src/assets/flags/en-us.png" alt="">
