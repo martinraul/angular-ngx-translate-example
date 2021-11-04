@@ -10,8 +10,9 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
  
   @Output() sendLanguage = new EventEmitter<string>();
-  selectedItem:any
+  selectedItem:any = 'item2'
   translates$:any
+
   constructor(private translate: TranslateService) { 
     this.translate.addLangs(['en','es', 'br']);
     this.translate.setDefaultLang('br');
@@ -31,21 +32,7 @@ export class HeaderComponent implements OnInit {
 
   
   setTranslations(){
-      // hardcoded example
-    //this.user = { firstName: 'Sammy', lastName: 'Shark' };
-
-    // synchronous. Also interpolate the 'firstName' parameter with a value.
-   // this.welcome = this.translate.instant('welcomeMessage', { firstName: this.user.firstName });
-
-    // asynchronous - gets translations then completes.
-    /*this.translate.get(['languages'])
-      .subscribe(translations => {
-        //this.usernameLabel = translations['login.username'];
-        //this.passwordLabel = translations['login.password'];
-        console.log(translations)
-      });*/
       this.translate.get("header").subscribe((res) => (console.log(res), this.translates$ = res));
-
   }
 
 }
