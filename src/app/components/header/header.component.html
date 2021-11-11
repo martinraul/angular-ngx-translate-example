@@ -1,25 +1,24 @@
 <nav class="navbar is-transparent">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-            <h1 class="title is-size-2 has-text-primary">{{translates$.header}}</h1>
+            <h1 class="title is-size-2 has-text-white">{{translates$.header}}</h1>
         </a>
     </div>
 
     <div class="navbar-end">
         <div class="navbar-item">
-            <div class="field is-grouped">
-                <p class="control">
+                <p class="control mr-2">
                     <a class="button" (click)="setLanguage($event)" id="en"
-                        [ngClass]="{'is-success': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
+                        [ngClass]="{'pressed is-outlined': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
                         <img src="assets/flags/en-us.png" alt="">
                         <span>
                             {{ translates$.english }}
                         </span>
                     </a>
                 </p>
-                <p class="control">
+                <p class="control mr-2">
                     <a class="button" (click)="setLanguage($event)" id="es"
-                        [ngClass]="{'is-success': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
+                        [ngClass]="{'pressed is-outlined': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
                         <img src="assets/flags/es-ar.png">
                         <span>
                             {{ translates$.spanish }}
@@ -28,14 +27,13 @@
                 </p>
                 <p class="control">
                     <a class="button" (click)="setLanguage($event)" id="br"
-                        [ngClass]="{'is-success': selectedItem === 'item3'}" (click)="selectedItem = 'item3'">
+                        [ngClass]="{'pressed ': selectedItem === 'item3'}" (click)="selectedItem = 'item3'">
                         <img src="assets/flags/pt-br.png" alt="">
                         <span>
                             {{ translates$.portuguese }}
                         </span>
                     </a>
                 </p>
-            </div>
         </div>
     </div>
 
