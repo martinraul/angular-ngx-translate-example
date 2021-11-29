@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
  
   @Output() sendLanguage = new EventEmitter<string>();
-  selectedItem:any = 'item2'
-  translates$:any
+  selectedItem:string = 'item2';
+  translates$:any;
 
   constructor(private translate: TranslateService) { 
     this.translate.addLangs(['en','es', 'br']);
@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
 
   setLanguage(e:any){
     let language= e.target.parentNode.id
-    console.log("language", language)   
     this.sendLanguage.emit(language);
     this.ngOnInit()
   }

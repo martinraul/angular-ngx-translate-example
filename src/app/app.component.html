@@ -1,5 +1,5 @@
 <app-header (sendLanguage)="getLanguage($event)"></app-header>
-<p class="title margin is-size-1">{{ 'title' | translate: user }}</p>
+<p class="title margin is-size-1">{{ 'title' | translate }}</p>
 
 <div class="columns">
     <div class="column ">
@@ -7,11 +7,13 @@
     </div>
     <div class="column">
         <div class="block  has-text-justified">
-            <h2 class="subtitle">{{ 'description' | translate: user }}</h2>
+            <h2 class="subtitle">{{ 'description' | translate}}</h2>
         </div>
     </div>
-
 </div>
+
+<p [innerHTML]="'dinamic_statement' | translate:{param:this.dinamicNumber }"></p>
+
 <span class="tag is-white ">
     <i src="assets/img/github-brands.svg"></i>
     <a class="has-text-success-dark has-text-weight-bold" target="_blank"
