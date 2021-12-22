@@ -6,5 +6,6 @@
     "spanish":"Espanhol",
     "portuguese":"Português",
     "header":"NGX-TRANSLATE Prova"
-  }
+  },
+  "dinamic_statement": "<span class='bold'>({{param}})</span>   Este número é um parâmetro dinamicamente inserido"
   }
