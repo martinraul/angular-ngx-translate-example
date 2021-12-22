@@ -11,11 +11,8 @@ export class HeaderComponent implements OnInit {
  
   @Output() sendLanguage = new EventEmitter<string>();
   selectedItem:string = 'item2';
-  translates$:any;
 
-  constructor() { 
- 
-  }
+  constructor() {}
   
   ngOnInit(): void {}
 
