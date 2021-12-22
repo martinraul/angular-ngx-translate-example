@@ -7,5 +7,5 @@
     "portuguese":"Portuguese",
     "header":"NGX-TRANSLATE Test"
   },
-  "dinamic_statement": "<span class='bold'>({{param}})</span> This number is dinamically inserted parameter."
+  "dinamic_statement": "<span class='bold'>({{param}})</span> This number is a dinamically inserted parameter."
 }
