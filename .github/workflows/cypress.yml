@@ -24,6 +24,8 @@ jobs:
           # Se usará el mismo cache siempre y cuando sea el mismo sistema operativo y no existan cambios en el archivo package-lock
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       # Instalar dependencias
+      - name: Npm CI
+        run: npm ci
       - name: Install dependencies
         # No ejecutar si se obtuvo node_modules de cache
         if: steps.node-cache.outputs.cache-hit != 'true' 
