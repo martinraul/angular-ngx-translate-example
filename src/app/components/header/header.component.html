@@ -1,39 +1,34 @@
 <nav class="navbar is-transparent">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-            <h1 class="title is-size-2 has-text-white">{{translates$.header}}</h1>
+            <h1 class="title is-size-2 has-text-white">{{'header.header' | translate}}
+            </h1>
         </a>
     </div>
 
     <div class="navbar-end">
         <div class="navbar-item">
-                <p class="control mr-2">
-                    <a class="button" (click)="setLanguage($event)" id="en"
-                        [ngClass]="{'pressed is-outlined': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
-                        <img src="assets/flags/en-us.png" alt="">
-                        <span>
-                            {{ translates$.english }}
-                        </span>
-                    </a>
-                </p>
-                <p class="control mr-2">
-                    <a class="button" (click)="setLanguage($event)" id="es"
-                        [ngClass]="{'pressed is-outlined': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
-                        <img src="assets/flags/es-ar.png">
-                        <span>
-                            {{ translates$.spanish }}
-                        </span>
-                    </a>
-                </p>
-                <p class="control">
-                    <a class="button" (click)="setLanguage($event)" id="br"
-                        [ngClass]="{'pressed ': selectedItem === 'item3'}" (click)="selectedItem = 'item3'">
-                        <img src="assets/flags/pt-br.png" alt="">
-                        <span>
-                            {{ translates$.portuguese }}
-                        </span>
-                    </a>
-                </p>
+            <p class="control mr-2">
+                <a class="button" (click)="setLanguage($event)" id="en"
+                    [ngClass]="{'pressed is-outlined': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
+                    <img src="assets/flags/en-us.png" alt="">
+                    <span>{{'header.english' | translate}}</span>
+                </a>
+            </p>
+            <p class="control mr-2">
+                <a class="button" (click)="setLanguage($event)" id="es"
+                    [ngClass]="{'pressed is-outlined': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
+                    <img src="assets/flags/es-ar.png">
+                    <span>{{'header.spanish' | translate}} </span>
+                </a>
+            </p>
+            <p class="control">
+                <a class="button" (click)="setLanguage($event)" id="br"
+                    [ngClass]="{'pressed ': selectedItem === 'item3'}" (click)="selectedItem = 'item3'">
+                    <img src="assets/flags/pt-br.png" alt="">
+                    <span>{{'header.portuguese' | translate}} </span>
+                </a>
+            </p>
         </div>
     </div>
 

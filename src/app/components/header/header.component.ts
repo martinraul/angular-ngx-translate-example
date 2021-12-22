@@ -13,15 +13,11 @@ export class HeaderComponent implements OnInit {
   selectedItem:string = 'item2';
   translates$:any;
 
-  constructor(private translate: TranslateService) { 
-    this.translate.addLangs(['en','es', 'br']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+  constructor() { 
+ 
   }
   
-  ngOnInit(): void {
-    this.setTranslations()
-  }
+  ngOnInit(): void {}
 
   setLanguage(e:any){
     let language= e.target.parentNode.id
@@ -29,9 +25,5 @@ export class HeaderComponent implements OnInit {
     this.ngOnInit()
   }
 
-  
-  setTranslations(){
-      this.translate.get("header").subscribe((res) => (console.log(res), this.translates$ = res));
-  }
 
 }
