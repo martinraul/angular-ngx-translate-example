@@ -1,15 +1,29 @@
-name: End-to-end tests
+name: Node.js CI
 
-on: [push]
+on:
+  push:
+    branches: [main, dev/*]
+  pull_request:
+    branches: [main, dev/*]
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      - name: Build
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      # Generar compilación de producción
+      - name: Run Build command
         run: npm run build -- --prod
-      # and run all Cypress tests
+      # Ejecutar pruebas unitarias
       - name: Cypress run
         uses: cypress-io/github-action@v2

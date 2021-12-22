@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
  
   @Output() sendLanguage = new EventEmitter<string>();
-  selectedItem:string = 'item2';
+  selectedItem:string = 'item2'; n
 
   constructor() {}
   
