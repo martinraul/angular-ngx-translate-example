@@ -1,29 +1,18 @@
-name: Node.js CI
+name: Cypress Tests
 
-on:
-  push:
-    branches: [main, dev/*]
-  pull_request:
-    branches: [main, dev/*]
+on: [push]
 
 jobs:
-  build:
+  cypress-run:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      # Generar compilación de producción
-      - name: Run Build command
-        run: npm run build -- --prod
-      # Ejecutar pruebas unitarias
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
+
