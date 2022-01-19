@@ -155,9 +155,21 @@
               "devServerTarget": "angular-ngx-translate-example:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "angular-ngx-translate-example"
+  "defaultProject": "angular-ngx-translate-example",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

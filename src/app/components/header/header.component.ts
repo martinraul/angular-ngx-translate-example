@@ -1,5 +1,5 @@
 import { TranslateService } from '@ngx-translate/core';
-import { Component, OnInit,EventEmitter,Output  } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,19 +8,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
- 
   @Output() sendLanguage = new EventEmitter<string>();
-  selectedItem:string = 'item2';
+  selectedItem: string = 'item2';
 
   constructor() {}
-  
-  ngOnInit(): void {}
 
-  setLanguage(e:any){
-    let language= e.target.parentNode.id
+  setLanguage(e: any) {
+    let language = e.target.parentNode.id;
     this.sendLanguage.emit(language);
-    this.ngOnInit()
+    this.ngOnInit();
   }
-
-
 }
