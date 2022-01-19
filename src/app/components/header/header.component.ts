@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   constructor() {}
 
+  ngOnInit(): void {}
+
   setLanguage(e: any) {
     let language = e.target.parentNode.id;
     this.sendLanguage.emit(language);
