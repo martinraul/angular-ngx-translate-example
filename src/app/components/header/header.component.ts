@@ -7,17 +7,14 @@ import { Observable } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() sendLanguage = new EventEmitter<string>();
   selectedItem: string = 'item2';
 
   constructor() {}
 
-  ngOnInit(): void {}
-
   setLanguage(e: any) {
     let language = e.target.parentNode.id;
     this.sendLanguage.emit(language);
-    this.ngOnInit();
   }
 }
