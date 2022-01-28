@@ -13,8 +13,8 @@ export class AppComponent {
   dinamicNumber: number = 89;
 
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en', 'es', 'br'])
-    this.translate.setDefaultLang('br')
+    this.translate.addLangs(['en', 'es', 'br']);
+    this.translate.setDefaultLang('br');
     this.translate.use('en');
   }
 
