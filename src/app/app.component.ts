@@ -1,5 +1,5 @@
 import { HeaderComponent } from './components/header/header.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -14,7 +14,9 @@ export class AppComponent {
 
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['en', 'es', 'br']);
+
     this.translate.setDefaultLang('br');
+
     this.translate.use('en');
   }
 
