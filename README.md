@@ -18,4 +18,6 @@ Run `npx cypress run` to execute the end-to-end tests via Cypress.io
 * [Cypress.io](https://www.cypress.io/) - For testing
 * [Bulma](https://bulma.io/) - For design
 * [Eslint](https://eslint.org/) - For code review
+* [Prettier](https://prettier.io/) - For format check
+* [Husky](https://www.npmjs.com/package/husky) - For pre-commit lint Hook
 
