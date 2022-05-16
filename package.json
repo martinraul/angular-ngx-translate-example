@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng deploy --base-href=/my-first-app/",
+    "deploy": "ng deploy --base-href=/angular-ngx-translate-example/",
     "test": "ng test",
     "e2e": "ng e2e",
     "cypress:open": "npx cypress run",

@@ -1,7 +1,10 @@
-import { HeaderComponent } from './components/header/header.component';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { NavigationEnd, Router } from '@angular/router';
 
+import { environment } from '../environments/environment';
+
+declare let gtag: (property: string, value: any, configs: any) => {};
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,10 +15,18 @@ export class AppComponent {
   language: string = '';
   dinamicNumber: number = 89;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, public router: Router) {
     this.translate.addLangs(['en', 'es', 'br']);
     this.translate.setDefaultLang('br');
     this.translate.use('en');
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        gtag('config', environment.googleAnalyticsId, {
+          page_path: event.urlAfterRedirects
+        });
+      }
+    });
   }
 
   getLanguage(language: string) {
