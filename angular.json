@@ -170,6 +170,7 @@
   },
   "defaultProject": "angular-ngx-translate-example",
   "cli": {
+    "analytics": "9fe2003a-6e94-482f-ac72-bfd95595019e",
     "defaultCollection": "@angular-eslint/schematics"
   }
 }
