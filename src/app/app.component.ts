@@ -31,5 +31,6 @@ export class AppComponent {
 
   getLanguage(language: string) {
     this.translate.use(language);
+    console.log(language)
   }
 }
