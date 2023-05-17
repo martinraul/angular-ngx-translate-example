@@ -1,0 +1,11 @@
+{
+  "title":"El Tempest es un avión fascinante",
+  "description":"El Hawker Tempest fue un avión de combate británico utilizado principalmente por la Royal Air Force (RAF) en la Segunda Guerra Mundial. El Tempest, originalmente conocido como Typhoon II, era un derivado mejorado del Hawker Typhoon, destinado a abordar el deterioro inesperado del rendimiento del Typhoon a gran altitud reemplazando su ala con un diseño de flujo laminar más delgado. Dado que se había apartado considerablemente del Typhoon, pasó a llamarse Tempest. El Tempest surgió como uno de los cazas más poderosos de la Segunda Guerra Mundial y fue el avión monomotor propulsado por hélice más rápido de la guerra a baja altitud.",
+  "header":{
+    "english":"Inglés",
+    "spanish":"Español",
+    "portuguese":"Portugues",
+    "header":"NGX-TRANSLATE Prueba"
+  },
+  "dinamic_statement": "<span class='bold'>({{param}})</span> Este número es un parámetro insertado dinámicamente."
+}
