@@ -7,6 +7,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './components/header/header.component';
+import { MyLibModule } from 'my-lib';
+
 // ng deploy --base-href=/angular-ngx-translate-example/ //
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -19,6 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MyLibModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
