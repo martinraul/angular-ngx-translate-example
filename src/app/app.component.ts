@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavigationEnd, Router } from '@angular/router';
 
@@ -6,14 +6,16 @@ import { environment } from '../environments/environment';
 
 declare let gtag: (property: string, value: any, configs: any) => {};
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent {
   title = 'angular-ngx-translate-example';
   language: string = '';
   dinamicNumber: number = 89;
+  angularVersion = VERSION.major;
 
   constructor(private translate: TranslateService, public router: Router) {
     this.translate.addLangs(['en', 'es', 'br']);

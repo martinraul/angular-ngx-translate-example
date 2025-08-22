@@ -92,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-ngx-translate-example:build:production"
+              "buildTarget": "angular-ngx-translate-example:build:production"
             },
             "development": {
-              "browserTarget": "angular-ngx-translate-example:build:development"
+              "buildTarget": "angular-ngx-translate-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-ngx-translate-example:build"
+            "buildTarget": "angular-ngx-translate-example:build"
           }
         },
         "test": {

@@ -2,21 +2,23 @@
 <p class="title margin is-size-1">{{ 'title' | translate }}</p>
 
 <div class="columns">
-    <div class="column ">
-        <img src="assets/img/tempest.jpg" alt="" width="800" height="800">
+  <div class="column ">
+    <img src="assets/img/tempest.jpg" alt="" width="800" height="800">
+  </div>
+  <div class="column">
+    <div class="block  has-text-justified">
+      <h2 class="subtitle">{{ 'description' | translate}}</h2>
     </div>
-    <div class="column">
-        <div class="block  has-text-justified">
-            <h2 class="subtitle">{{ 'description' | translate}}</h2>
-        </div>
-    </div>
+  </div>
 </div>
 
-<p [innerHTML]="'dinamic_statement' | translate:{param:this.dinamicNumber }"></p>
-
 <span class="tag is-white ">
-    <i src="assets/img/github-brands.svg"></i>
-    <a class="has-text-success-dark has-text-weight-bold" target="_blank"
-        href="https://github.com/ngx-translate/core">https://github.com/ngx-translate/core</a>
+  <i src="assets/img/github-brands.svg"></i>
+  <a class="has-text-success-dark has-text-weight-bold" target="_blank"
+    href="https://github.com/ngx-translate/core">https://github.com/ngx-translate/core</a>
+
 </span>
+
+<p>      Angular V{{ angularVersion }}
+</p>
 <router-outlet></router-outlet>
