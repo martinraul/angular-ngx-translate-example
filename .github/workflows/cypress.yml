@@ -31,7 +31,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: false           # do not start another server
-          wait-on: http://localhost:4300
           browser: chrome
           config-file: cypress.config.ts
+          wait-on: http://localhost:4300
+          wait-on-timeout: 60
