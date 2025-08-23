@@ -1,15 +1,12 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-  videosFolder: 'cypress/videos',
-  screenshotsFolder: 'cypress/screenshots',
-  fixturesFolder: 'cypress/fixtures',
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    baseUrl: 'http://localhost:4300', // your dev server
+    supportFile: 'cypress/support/e2e.ts', // adjust if different
+    specPattern: 'cypress/e2e/**/*.cy.{js,ts}',
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.ts')(on, config);
-    },
-    baseUrl: 'http://localhost:4200'
+      // implement node event listeners if needed
+    }
   }
 });

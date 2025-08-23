@@ -22,13 +22,16 @@ jobs:
       # Start Angular app on a different port in background
       - name: Start server
         run: npm run start -- --port 4300 &
-      
+
       # Wait for server to be ready
       - name: Wait for server
         run: npx wait-on http://localhost:4300
 
+      # Run Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: npx cypress run --config-file cypress.config.ts --config baseUrl=http://localhost:4300
-
+          start: false           # do not start another server
+          wait-on: http://localhost:4300
+          browser: chrome
+          config-file: cypress.config.ts
