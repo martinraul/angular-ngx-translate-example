@@ -1,13 +1,12 @@
 name: Cypress Tests
-
 on: [push]
 
 jobs:
-  cypress-run:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -20,10 +19,16 @@ jobs:
       - name: Build project
         run: npm run build -- --configuration production
 
+      # Start Angular app on a different port in background
       - name: Start server
-        run: npm start &
-        
+        run: npm run start -- --port 4300 &
+      
+      # Wait for server to be ready
+      - name: Wait for server
+        run: npx wait-on http://localhost:4300
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          start: npx cypress run --config-file cypress.config.ts --config baseUrl=http://localhost:4300
+
