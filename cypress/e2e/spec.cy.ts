@@ -12,7 +12,7 @@ describe('App simple test', () => {
     cy.get('#es').should('have.class', 'button pressed is-outlined');
     cy.contains('El Tempest es un avión fascinante');
   });
-  
+
   it('Click the Portuguese language button', () => {
     cy.visit('/');
     cy.get('#br').click();
